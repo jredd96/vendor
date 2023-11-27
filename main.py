@@ -17,6 +17,7 @@ class VendingMachine:
 
     def display_inventory(self):
         self.state.display_inventory(self)
+
     def purchase_item(self, item, quantity):
         self.state = self.transition.to_processing_purchase(self, item, quantity)
 
