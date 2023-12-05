@@ -1,5 +1,6 @@
-from states import IdleState
-from transitions import StateTransition
+from core.states import IdleState
+from core.transitions import StateTransition
+from gui.main_gui import main_gui
 
 class VendingMachine:
     """
@@ -29,7 +30,10 @@ vendor = VendingMachine()
 vendor.display_inventory()
 print(vendor.state)
 
-while True:
-    selection = input("Make a selection: ")
-    qty = input("Select a quantity: ")
-    vendor.purchase_item(selection, qty)
+main_gui(vendor)
+
+if __name__ == "__main__":
+    while True:
+        selection = input("Make a selection: ")
+        qty = input("Select a quantity: ")
+        vendor.purchase_item(selection, qty)
